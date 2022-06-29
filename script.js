@@ -55,11 +55,20 @@ const theBestEl = document.querySelector(".theBest");
 const wrongEl = document.querySelector(".wrong");
 const correctEl = document.querySelector(".correct");
 const viewHighScoresEl = document.querySelector(".viewHighScores");
+const restartQuizEl = document.querySelector(".restartQuiz");
+
+function restartQuiz() {
+    location.reload();
+}
 
 function viewHighScores() {
     const highScoresStorage = JSON.parse(localStorage.getItem("highScores"));
-    console.log(highScoresStorage);
+    if (startQuizEl) startQuizEl.classList.add("d-none");
+    if (questionContainerEl) questionContainerEl.classList.add("d-none");
+    topRankedEl.classList.remove("d-none");
+    initialsInputEl.classList.add("d-none");
     theBestEl.classList.remove("d-none");
+    if (!highScoresStorage) return;
     highScoresStorage.forEach((item) => {
         const newLi = document.createElement("li");
         newLi.innerText = `${item.initials}:${item.score}`;
@@ -80,7 +89,6 @@ function saveHighScore() {
 
     const highScoresStorage = JSON.parse(localStorage.getItem("highScores"));
     console.log(highScoresStorage);
-    topRankedEl.classList.remove("d-none");
     theBestEl.classList.remove("d-none");
     highScoresStorage.forEach((item) => {
         const newLi = document.createElement("li");
@@ -148,6 +156,7 @@ function startTest() {
         button.addEventListener("click", checkAnswer)
     );
 }
+restartQuizEl.addEventListener("click", restartQuiz);
 viewHighScoresEl.addEventListener("click", viewHighScores);
 beginQuizEl.addEventListener("click", startTest);
 buttonAddon2El.addEventListener("click", saveHighScore);
