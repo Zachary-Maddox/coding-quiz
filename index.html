@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+            integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="assets/style.css" />
+        <title>Coding Quiz</title>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Coding Quiz</a>
+                <span class="ml-auto mr-1">Timer:</span>
+                <span class="mr-2 timer">60</span>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Highscores</a>
+                        </li>
+                        <li class="nav-item"></li>
+                    </ul>
+
+                </div>
+               
+            </nav>
+        </header>
+        <main>
+            <section class="text-center startQuiz">
+                <h1 class="text-center">Test Your Knowledge</h1>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Similique reiciendis harum aliquid cum laudantium facilis
+                    voluptates, nemo rerum accusamus totam eveniet, provident a
+                    placeat nostrum sint debitis consectetur, quis ipsa!
+                </p>
+                <button class="btn btn-primary beginQuiz">Start Quiz</button>
+            </section>
+            <section class="text-center d-none questionContainer">
+                <p class="question">Which answer is not a primitve data type?</p>
+                <div>
+                    <button class="btn btn-primary mr-2  answerBtn"> String</button
+                    ><button class="btn btn-primary mr-2 answerBtn"> Boolean
+                        </button
+                    ><button class="btn btn-primary  mr-2 answerBtn">Number
+                        </button
+                    ><button class="btn btn-primary mr-2 answerBtn">Tom Brady
+                        
+                    </button>
+                    <div class="wrong d-none"><h2>incorrect!</h2>
+
+                    </div>
+                    <div class="correct d-none"> correct!</div>
+                </div>
+            </section>
+            <section class="topRanked d-none ">Highscores
+              <div class="input-group mb-3 initialsInput">
+                <input type="text" class="form-control initials" placeholder=" username initials" aria-label="username initials" aria-describedby="buttonAddon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" id="buttonAddon2">Save Score</button>
+                </div>
+              </div>
+              <div class="theBest d-none">
+              <ul class="list-group listGroup">
+              
+              </ul>
+            </div>
+            </section>
+        </main>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+            crossorigin="anonymous"
+        ></script>
+        <script src="script.js"></script>
+    </body>
+</html>
