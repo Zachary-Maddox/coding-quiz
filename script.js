@@ -52,6 +52,21 @@ const initialsEl = document.querySelector(".initials");
 const initialsInputEl = document.querySelector(".initialsInput");
 const listGroupEl = document.querySelector(".listGroup");
 const theBestEl = document.querySelector(".theBest");
+const wrongEl = document.querySelector(".wrong");
+const correctEl = document.querySelector(".correct");
+const viewHighScoresEl = document.querySelector(".viewHighScores");
+
+function viewHighScores() {
+    const highScoresStorage = JSON.parse(localStorage.getItem("highScores"));
+    console.log(highScoresStorage);
+    theBestEl.classList.remove("d-none");
+    highScoresStorage.forEach((item) => {
+        const newLi = document.createElement("li");
+        newLi.innerText = `${item.initials}:${item.score}`;
+        newLi.classList.add("list-group-item");
+        listGroupEl.appendChild(newLi);
+    });
+}
 
 function saveHighScore() {
     console.log(initialsEl.value);
@@ -65,6 +80,7 @@ function saveHighScore() {
 
     const highScoresStorage = JSON.parse(localStorage.getItem("highScores"));
     console.log(highScoresStorage);
+    topRankedEl.classList.remove("d-none");
     theBestEl.classList.remove("d-none");
     highScoresStorage.forEach((item) => {
         const newLi = document.createElement("li");
@@ -92,16 +108,24 @@ function endQuiz() {
 function checkAnswer(e) {
     console.log(currentQuestion);
     if (questions[currentQuestion].answer == e.target.innerText) {
+        correctEl.classList.remove("d-none");
         if (currentQuestion < questions.length - 1) {
-            showNextQuestion();
+            setTimeout(() => {
+                showNextQuestion();
+                correctEl.classList.add("d-none");
+            }, 1000);
         } else {
             endQuiz();
         }
         console.log("correctAnswer");
     } else {
         timer = timer - 5;
+        wrongEl.classList.remove("d-none");
         if (currentQuestion < questions.length - 1) {
-            showNextQuestion();
+            setTimeout(() => {
+                showNextQuestion();
+                wrongEl.classList.add("d-none");
+            }, 1000);
         } else {
             endQuiz();
         }
@@ -124,6 +148,6 @@ function startTest() {
         button.addEventListener("click", checkAnswer)
     );
 }
-
+viewHighScoresEl.addEventListener("click", viewHighScores);
 beginQuizEl.addEventListener("click", startTest);
 buttonAddon2El.addEventListener("click", saveHighScore);
