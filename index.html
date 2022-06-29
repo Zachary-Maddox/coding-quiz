@@ -15,7 +15,7 @@
     </head>
 
     <body>
-        <header>
+        <header class="p-3 mb-2 bg-info text-black">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">Coding Quiz</a>
                 <span class="ml-auto mr-1">Timer:</span>
@@ -45,30 +45,42 @@
         </header>
         <main>
             <section class="text-center startQuiz">
-                <h1 class="text-center ">Test Your Knowledge</h1>
-                <p>
+                <h1 class="text-center">Test Your Knowledge</h1>
+                <p class="p-3 mb-2 bg-info text-white">
                     Click the button "Start Quiz" to test your knowledge on five
                     fundamental questions about javascript. During the test you
                     can see there is a timer that counts down from sixty seconds
-                    but becareful! If you answer incorrectly you loose five
+                    but be careful! If you answer incorrectly you loose five
                     seconds off your timer. At the end of the quiz there will be
-                    a section to record your high score(amount of time left) and
-                    initials.
+                    a section to record your high score (amount of time left)
+                    and initials.
                 </p>
-                <button class="btn btn-primary beginQuiz">Start Quiz</button>
+                <button
+                    class="btn btn-primary beginQuiz p-3 mb-2 bg-info text-white"
+                >
+                    Start Quiz
+                </button>
             </section>
             <section class="text-center d-none questionContainer">
                 <p class="question">
                     Which answer is not a primitve data type?
                 </p>
                 <div>
-                    <button class="btn btn-primary mr-2 answerBtn">
+                    <button
+                        class="btn btn-primary mr-2 p-3 mb-2 bg-info text-white answerBtn"
+                    >
                         String</button
-                    ><button class="btn btn-primary mr-2 answerBtn">
+                    ><button
+                        class="btn btn-primary mr-2 p-3 mb-2 bg-info text-white answerBtn"
+                    >
                         Boolean</button
-                    ><button class="btn btn-primary mr-2 answerBtn">
+                    ><button
+                        class="btn btn-primary mr-2 p-3 mb-2 bg-info text-white answerBtn"
+                    >
                         Number</button
-                    ><button class="btn btn-primary mr-2 answerBtn">
+                    ><button
+                        class="btn btn-primary mr-2 p-3 mb-2 bg-info text-white answerBtn"
+                    >
                         Tom Brady
                     </button>
                     <div class="wrong d-none"><h2>incorrect!</h2></div>
@@ -88,7 +100,7 @@
                     />
                     <div class="input-group-append">
                         <button
-                            class="btn btn-outline-secondary"
+                            class="btn btn-outline-secondary p-2 mb-2 bg-info text-white"
                             type="button"
                             id="buttonAddon2"
                         >
